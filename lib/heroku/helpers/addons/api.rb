@@ -74,6 +74,11 @@ module Heroku::Helpers
         request_list(:path => path)
       end
 
+      def get_plan(options = {})
+        path = "/addon-services/#{options[:service]}/plans/#{options[:plan]}"
+        request(:path => path)
+      end
+
       private
 
       def addons_path(options)
